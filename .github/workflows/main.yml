@@ -3,13 +3,20 @@ name: Hello World Workflow
 on: [push]
 
 jobs:
-   build:
-       runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-       steps:
-       - name: Checkout code
-         uses: actions/checkout@v2
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-       - name: Print Hello, world!
-         run:  |
-           echo "Hello, World!"
+    - name: Run Python script with secret
+      env:
+        SOME_SECRET: ${{ secrets.SOME_SECRET }}
+      run: python demo.py > output.log
+
+    - name: Upload log file
+      uses: actions/upload-artifact@v3
+      with:
+        name: demo-log
+        path: output.log
