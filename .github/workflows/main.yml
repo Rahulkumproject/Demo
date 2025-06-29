@@ -29,6 +29,11 @@ jobs:
     - name: Check MongoDB status
       run: docker ps -a
 
+    - name: Test
+      env:
+        SOME_SECRET: ${{ env.MONGO_CON}}
+      run: echo ${SOME_SECRET}
+
     - name: Run Python script with MongoDB
       env:
         SOME_SECRET: ${{ env.MONGO_CON}}
