@@ -10,6 +10,14 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: pip install python-dotenv
+
     - name: Run Python script with secret
       env:
         SOME_SECRET: ${{ secrets.SOME_SECRET }}
