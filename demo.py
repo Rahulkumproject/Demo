@@ -9,8 +9,10 @@ load_dotenv()
 mongo_uri = os.environ.get("SOME_SECRET")
 
 # Connect to MongoDB
+print("Some secret",mongo_uri)
 try:
     client = MongoClient(mongo_uri)
+    print("client",client)
     db = client.Socks  # Replace 'test' with your database name
     
     print("Connected to MongoDB successfully!")
