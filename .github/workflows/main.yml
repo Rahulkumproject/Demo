@@ -16,7 +16,7 @@ jobs:
       run: python demo.py > output.log
 
     - name: Upload log file
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.0
       with:
         name: demo-log
         path: output.log
