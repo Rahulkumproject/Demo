@@ -1,0 +1,1 @@
+Print(os.environ["SOME_SECRET"])
