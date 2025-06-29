@@ -20,7 +20,7 @@ jobs:
 
     - name: Run Python script with secret
       env:
-        SOME_SECRET: ${{ secrets.SOME_SECRET }}
+        SOME_SECRET: ${{ secrets.Mongo_uri }}
       run: python demo.py > output.log
 
     - name: Upload log file
