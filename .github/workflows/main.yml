@@ -31,12 +31,12 @@ jobs:
 
     - name: Test
       env:
-        SOME_SECRET: ${{vars.MONGO_CON}}
+        SOME_SECRET: ${{secrets.MONGO_ID}}
       run: echo ${SOME_SECRET}
 
     - name: Run Python script with MongoDB
       env:
-        SOME_SECRET: ${{ vars.MONGO_CON}}
+        SOME_SECRET: ${{ secrets.MONGO_ID}}
       run: python demo.py > output.log
 
     - name: Upload log file
