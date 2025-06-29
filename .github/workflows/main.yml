@@ -31,7 +31,7 @@ jobs:
 
     - name: Run Python script with MongoDB
       env:
-        SOME_SECRET: ${{ secrets.Mongo }}
+        SOME_SECRET: ${{ env.Mongo_con}}
       run: python demo.py > output.log
 
     - name: Upload log file

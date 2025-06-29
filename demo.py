@@ -6,7 +6,7 @@ from pymongo import MongoClient
 load_dotenv()
 
 # Get MongoDB connection string from environment variable
-mongo_uri = os.environ.get("SOME_SECRET", "mongodb://localhost:27017")
+mongo_uri = os.environ.get("SOME_SECRET")
 
 # Connect to MongoDB
 try:
