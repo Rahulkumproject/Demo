@@ -1,6 +1,6 @@
 name: MongoDB Server Workflow
 
-on: [push]
+on: [workflow_dispatch]
 
 jobs:
   build:
@@ -29,10 +29,7 @@ jobs:
     - name: Check MongoDB status
       run: docker ps -a
 
-    - name: Test
-      env:
-        SOME_SECRET: ${{secrets.MONGO_ID}}
-      run: echo ${SOME_SECRET}
+    
 
     - name: Run Python script with MongoDB
       env:
