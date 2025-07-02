@@ -33,8 +33,10 @@ jobs:
 
     - name: Run Python script with MongoDB
       env:
-        SOME_SECRET: ${{ secrets.MONGO_ID}}
-      run: python demo.py > output.log
+        SOME_SECRET: ${{ secrets.MONGO_ID }}
+      run: |
+        echo "Using secret: $SOME_SECRET"
+        python demo.py > output.log
 
     - name: Upload log file
       uses: actions/upload-artifact@v4
